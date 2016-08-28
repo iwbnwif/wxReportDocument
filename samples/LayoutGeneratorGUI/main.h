@@ -26,8 +26,8 @@
 
 class MainApp : public wxApp
 {
-	public:
-		virtual bool OnInit();
+    public:
+        virtual bool OnInit();
 };
 
 // declare global static function wxGetApp()
@@ -39,44 +39,44 @@ DECLARE_APP(MainApp)
 
 struct Student
 {
-	int id;
-	wxString surname;
-	wxString firstName;
-	wxString degree;
-	wxString field;
-	int year;
+    int id;
+    wxString surname;
+    wxString firstName;
+    wxString degree;
+    wxString field;
+    int year;
 };
 
 struct LessonRecord
 {
-	wxString year;
-	wxString name;
-	wxString place;
-	wxString form;
-	int students;
+    wxString year;
+    wxString name;
+    wxString place;
+    wxString form;
+    int students;
 };
 
 WX_DECLARE_OBJARRAY(Student, ArrayOfStudents);
 
 class MainDialog : public MainDialogBase
 {
-	public:
-		MainDialog( wxWindow *parent );
-		virtual ~MainDialog();
-		wxReportDocument *report;
-		ArrayOfStudents arrSt;
-		LessonRecord lesson;
-		
-	protected:
-		// protected event handlers
-		virtual void OnCloseDialog( wxCloseEvent& event );
-		virtual void OnGen1( wxCommandEvent& event );
-		virtual void OnGen2( wxCommandEvent& event ) ;
-		virtual void OnGen3( wxCommandEvent& event );
-		virtual void OnPreview( wxCommandEvent& event );
-		virtual void OnPrint( wxCommandEvent& event );
-		virtual void OnXML( wxCommandEvent& event );
-		//virtual void OnCloseDialog( wxCommandEvent& event );
+    public:
+        MainDialog( wxWindow *parent );
+        virtual ~MainDialog();
+        wxReportDocument *report;
+        ArrayOfStudents arrSt;
+        LessonRecord lesson;
+        
+    protected:
+        // protected event handlers
+        virtual void OnCloseDialog( wxCloseEvent& event );
+        virtual void OnGen1( wxCommandEvent& event );
+        virtual void OnGen2( wxCommandEvent& event ) ;
+        virtual void OnGen3( wxCommandEvent& event );
+        virtual void OnPreview( wxCommandEvent& event );
+        virtual void OnPrint( wxCommandEvent& event );
+        virtual void OnXML( wxCommandEvent& event );
+        //virtual void OnCloseDialog( wxCommandEvent& event );
 };
 
 #endif //__main__

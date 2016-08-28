@@ -26,8 +26,8 @@
 
 class MainApp : public wxApp
 {
-	public:
-		virtual bool OnInit();
+    public:
+        virtual bool OnInit();
 };
 
 // declare global static function wxGetApp()
@@ -39,22 +39,22 @@ DECLARE_APP(MainApp)
 
 class MainFrame : public MainFrameBase
 {
-	public:
-		MainFrame( wxWindow *parent );
-		virtual ~MainFrame();
-		
-	protected:
-		// protected event handlers
-		virtual void OnCloseFrame( wxCloseEvent& event );
-		virtual void OnExitClick( wxCommandEvent& event );
-		virtual void Print( wxCommandEvent& event );
-		virtual void DoChangeCount( wxCommandEvent& event );
-		void ChangeCount();
-		wxReportDocument prt;
-		wxArrayString sar1;
-		wxArrayString sar2;
-		wxArrayString sar3;
-		wxArrayString sar4;
+    public:
+        MainFrame( wxWindow *parent );
+        virtual ~MainFrame();
+        
+    protected:
+        // protected event handlers
+        virtual void OnCloseFrame( wxCloseEvent& event );
+        virtual void OnExitClick( wxCommandEvent& event );
+        virtual void Print( wxCommandEvent& event );
+        virtual void DoChangeCount( wxCommandEvent& event );
+        void ChangeCount();
+        wxReportDocument prt;
+        wxArrayString sar1;
+        wxArrayString sar2;
+        wxArrayString sar3;
+        wxArrayString sar4;
 };
 
 #endif //__main__

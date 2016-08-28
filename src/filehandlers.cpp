@@ -4,16 +4,16 @@
 
 wxReportFileHandler::wxReportFileHandler()
 {
-	this->m_iFormatId = 0;
-	this->m_pPages = NULL;
+    this->m_iFormatId = 0;
+    this->m_pPages = NULL;
 }
 
 const int& wxReportFileHandler::GetFormatId() const
 {
-	return this->m_iFormatId;
+    return this->m_iFormatId;
 }
 
 const wxString& wxReportFileHandler::GetFormatSuffix() const
 {
-	return this->m_sFormatSuffix;
+    return this->m_sFormatSuffix;
 }
