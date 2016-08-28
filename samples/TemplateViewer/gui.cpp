@@ -19,8 +19,7 @@ MainFrameBase::MainFrameBase( wxWindow* parent, wxWindowID id, const wxString& t
 	menuFileOpen = new wxMenuItem( m_menuFile, wxID_OPEN, wxString( _("Open layout...") ) + wxT('\t') + wxT("Ctrl+O"), wxEmptyString, wxITEM_NORMAL );
 	m_menuFile->Append( menuFileOpen );
 	
-	wxMenuItem* m_separator1;
-	m_separator1 = m_menuFile->AppendSeparator();
+    m_menuFile->AppendSeparator();
 	
 	wxMenuItem* menuFilePrint;
 	menuFilePrint = new wxMenuItem( m_menuFile, wxID_PRINT, wxString( _("Print...") ) + wxT('\t') + wxT("Ctrl+P"), wxEmptyString, wxITEM_NORMAL );
@@ -30,8 +29,7 @@ MainFrameBase::MainFrameBase( wxWindow* parent, wxWindowID id, const wxString& t
 	menuFilePreview = new wxMenuItem( m_menuFile, wxID_PREVIEW, wxString( _("Show print preview") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menuFile->Append( menuFilePreview );
 	
-	wxMenuItem* m_separator2;
-	m_separator2 = m_menuFile->AppendSeparator();
+    m_menuFile->AppendSeparator();
 	
 	wxMenuItem* menuFileExit;
 	menuFileExit = new wxMenuItem( m_menuFile, wxID_EXIT, wxString( _("E&xit") ) + wxT('\t') + wxT("Alt+X"), wxEmptyString, wxITEM_NORMAL );
