@@ -23,7 +23,7 @@ public:
     /**
      * \brief Default destructor.
      */
-    ~wxReportFileHandler() {;}
+    virtual ~wxReportFileHandler() {;}
     /**
      * \brief Save print report to the specified output file.
      * \param pages pointer to the array of pages to save
