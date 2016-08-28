@@ -451,7 +451,7 @@ void wxReportPage::RefreshPageNumbers()
 wxXmlNode* wxReportPage::CreateXmlNode()
 {
 	wxXmlNode *pageNode = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("Page"));
-	pageNode->AddProperty(this->m_style.CreateXmlNode()->GetAttributes());
+	pageNode->AddAttribute(this->m_style.CreateXmlNode()->GetAttributes());
 		
 	int count = this->m_arItems.GetCount();
 		

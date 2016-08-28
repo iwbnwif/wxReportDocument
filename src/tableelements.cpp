@@ -117,7 +117,7 @@ wxXmlNode* wxReportTableCell::CreateXmlNode(const wxReportTextStyle& cellsStyle)
 	mainNode->AddAttribute(wxT("Wrap"), wxString::Format(wxT("%d"), this->m_wrapMode));
 	
 	if(!(cellsStyle == this->m_style))
-		mainNode->AddProperty(this->m_style.CreateXmlNode()->GetProperties());
+		mainNode->AddAttribute(this->m_style.CreateXmlNode()->GetAttributes());
 	
 	mainNode->AddChild(valueNode);	
 	
@@ -1683,7 +1683,7 @@ wxXmlNode* wxReportTableItem::CreateXmlNode()
 	itemNode->AddAttribute(wxT("X"), wxString::Format(wxT("%G"), this->m_position.x));
 	itemNode->AddAttribute(wxT("Y"), wxString::Format(wxT("%G"), this->m_position.y));
 	itemNode->AddAttribute(wxT("Variable"), wxString::Format(wxT("%d"), this->m_fVariable));
-	itemNode->AddProperty(this->m_style.CreateXmlNode()->GetAttributes());
+	itemNode->AddAttribute(this->m_style.CreateXmlNode()->GetAttributes());
 	
 	wxXmlNode *cellsStyleNode = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("DefaultCellsStyle"));
 	cellsStyleNode->AddChild(this->m_cellsStyle.CreateXmlNode());

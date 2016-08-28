@@ -15,8 +15,9 @@
 inline int MM2PX(double mm, wxDC *dc, bool toScreen)
 {
 	double sx = 1.0, sy = 1.0;
-	if( !toScreen ) dc->GetUserScale(&sx, &sy);
-			
+	// if( !toScreen ) dc->GetUserScale(&sx, &sy);
+    dc->GetUserScale(&sx, &sy);
+    
 	return wxRound((((double)(dc->GetPPI().x) / 25.4) * mm) / sx);
 }
 

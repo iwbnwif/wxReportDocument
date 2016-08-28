@@ -227,7 +227,7 @@ wxXmlNode* wxReportImageItem::CreateXmlNode()
 	itemNode->AddAttribute( wxT("Width"), wxString::Format(wxT("%d"), this->m_iWidth) );
 	itemNode->AddAttribute( wxT("Height"), wxString::Format(wxT("%d"), this->m_iHeight) );
 	itemNode->AddAttribute( wxT("PPI"), wxString::Format(wxT("%d"), this->m_iPPI) );
-	itemNode->AddProperty(this->m_style.CreateXmlNode()->GetProperties());
+	itemNode->AddAttribute(this->m_style.CreateXmlNode()->GetAttributes());
 		
 	return itemNode;
 }
@@ -275,8 +275,8 @@ void wxReportImageItem::DrawToDC(wxDC* dc, bool toScreen, const wxReportPageStyl
 		double updscale = scale;
 		double prevScaleX = 1, prevScaleY = 1;
 		dc->GetUserScale(&prevScaleX, &prevScaleY);
-		if(toScreen)
-			updscale *= prevScaleX;
+		// if(toScreen)
+			// updscale *= prevScaleX;
 			
 		dc->SetUserScale(updscale, updscale);
 		

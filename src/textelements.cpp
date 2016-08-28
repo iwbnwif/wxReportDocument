@@ -148,7 +148,7 @@ wxXmlNode* wxReportTextValue::CreateXmlNode()
 	mainNode->AddAttribute(wxT("Type"), wxString::Format(wxT("%d"), this->m_iType));
 	mainNode->AddAttribute(wxT("Name"), this->m_sName);
 	mainNode->AddAttribute(wxT("Variable"), wxString::Format(wxT("%d"), this->m_fVariable));	
-	mainNode->AddProperty(this->m_style.CreateXmlNode()->GetProperties());
+	mainNode->AddAttribute(this->m_style.CreateXmlNode()->GetAttributes());
 	mainNode->AddChild(valueNode);	
 	
 	return mainNode;
@@ -382,7 +382,7 @@ wxXmlNode* wxReportTextParagraph::CreateXmlNode()
 	wxXmlNode *paragraphNode = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("Paragraph"));
 	paragraphNode->AddAttribute(wxT("Type"), wxString::Format(wxT("%d"), this->m_iType));
 	paragraphNode->AddAttribute(wxT("Name"), this->m_sName);
-	paragraphNode->AddProperty(this->m_style.CreateXmlNode()->GetAttributes());
+	paragraphNode->AddAttribute(this->m_style.CreateXmlNode()->GetAttributes());
 	
 	int count = this->m_arTextValues.GetCount();
 	
