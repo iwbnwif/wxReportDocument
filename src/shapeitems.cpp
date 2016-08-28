@@ -13,9 +13,9 @@ void wxReportShapeItem::SetLineColor(const wxColour& color)
     this->m_lineColor = color;
 }
 
-void wxReportShapeItem::SetLineStyle(int lineStyle)
+void wxReportShapeItem::SetLineStyle(wxPenStyle lineStyle)
 {
-    this->m_iLineStyle = lineStyle;
+    m_iLineStyle = lineStyle;
 }
 
 void wxReportShapeItem::SetFillColor(const wxColour& fillColor)
@@ -33,9 +33,9 @@ const wxColour& wxReportShapeItem::GetLineColor()
     return this->m_lineColor;
 }
 
-const int& wxReportShapeItem::GetLineStyle()
+const wxPenStyle wxReportShapeItem::GetLineStyle()
 {
-    return this->m_iLineStyle;
+    return m_iLineStyle;
 }
 
 const wxColour& wxReportShapeItem::GetFillColor()
@@ -52,11 +52,12 @@ wxReportLineShape::wxReportLineShape()
     this->m_point2 = wxRealPoint(0, 0);
     this->m_dLineThickness = 0.5;
     this->m_lineColor = *wxBLACK;
-    this->m_iLineStyle = wxSOLID;
+    this->m_iLineStyle = wxPENSTYLE_SOLID;
     this->m_fillColor = wxNullColour;
 }
 
-wxReportLineShape::wxReportLineShape(const wxRealPoint& point1, const wxRealPoint& point2, double lineThickness, const wxColour& lineColor, int lineStyle)
+wxReportLineShape::wxReportLineShape(const wxRealPoint& point1, const wxRealPoint& point2, 
+                                        double lineThickness, const wxColour& lineColor, const wxPenStyle lineStyle)
 {
     this->m_iType = wxRP_LINESHAPE;
     this->m_point1 = point1;
@@ -67,7 +68,8 @@ wxReportLineShape::wxReportLineShape(const wxRealPoint& point1, const wxRealPoin
     this->m_fillColor = wxNullColour;
 }
 
-wxReportLineShape::wxReportLineShape(double x1, double y1, double x2, double y2, double lineThickness, const wxColour& lineColor, int lineStyle)
+wxReportLineShape::wxReportLineShape(double x1, double y1, double x2, double y2, double lineThickness,
+                                        const wxColour &lineColor, const wxPenStyle lineStyle)
 {
     this->m_iType = wxRP_LINESHAPE;
     this->m_point1 = wxRealPoint(x1, y1);
@@ -175,11 +177,12 @@ wxReportRectangleShape::wxReportRectangleShape()
     this->m_dHeight = 0;
     this->m_dLineThickness = 0.5;
     this->m_lineColor = *wxBLACK;
-    this->m_iLineStyle = wxSOLID;
+    this->m_iLineStyle = wxPENSTYLE_SOLID;
     this->m_fillColor = wxNullColour;
 }
 
-wxReportRectangleShape::wxReportRectangleShape(double x, double y, double width, double height, double lineThickness, const wxColour &lineColor, int lineStyle, const wxColour &fillColor)
+wxReportRectangleShape::wxReportRectangleShape(double x, double y, double width, double height, double lineThickness, 
+                                                const wxColour& lineColor, const wxPenStyle lineStyle, const wxColour &fillColor)
 {
     this->m_iType = wxRP_RECTANGLESHAPE;
     this->m_topLeftPoint = wxRealPoint(x, y);
@@ -191,7 +194,8 @@ wxReportRectangleShape::wxReportRectangleShape(double x, double y, double width,
     this->m_fillColor = fillColor;
 }
 
-wxReportRectangleShape::wxReportRectangleShape(const wxRealPoint& topLeftCorner, double width, double height, double lineThickness, const wxColour &lineColor, int lineStyle, const wxColour &fillColor)
+wxReportRectangleShape::wxReportRectangleShape(const wxRealPoint& topLeftCorner, double width, double height, double lineThickness, 
+                                                const wxColour& lineColor, const wxPenStyle lineStyle, const wxColour &fillColor)
 {
     this->m_iType = wxRP_RECTANGLESHAPE;
     this->m_topLeftPoint = topLeftCorner;
@@ -344,11 +348,12 @@ wxReportCircleShape::wxReportCircleShape()
     this->m_dRadius = 0;
     this->m_dLineThickness = 0.5;
     this->m_lineColor = *wxBLACK;
-    this->m_iLineStyle = wxSOLID;
+    this->m_iLineStyle = wxPENSTYLE_SOLID;
     this->m_fillColor = wxNullColour;
 }
 
-wxReportCircleShape::wxReportCircleShape(double centreX, double centreY, double radius, double lineThickness, const wxColour &lineColor, int lineStyle, const wxColour &fillColor)
+wxReportCircleShape::wxReportCircleShape(double centreX, double centreY, double radius, double lineThickness, 
+                                            const wxColour &lineColor, const wxPenStyle lineStyle, const wxColour &fillColor)
 {
     this->m_iType = wxRP_CIRCLESHAPE;
     this->m_centreCoord = wxRealPoint(centreX, centreY);
@@ -359,7 +364,8 @@ wxReportCircleShape::wxReportCircleShape(double centreX, double centreY, double 
     this->m_fillColor = fillColor;
 }
 
-wxReportCircleShape::wxReportCircleShape(const wxRealPoint& centreCoord, double radius, double lineThickness, const wxColour &lineColor, int lineStyle, const wxColour &fillColor)
+wxReportCircleShape::wxReportCircleShape(const wxRealPoint& centreCoord, double radius, double lineThickness, 
+                                            const wxColour &lineColor, const wxPenStyle lineStyle, const wxColour &fillColor)
 {
     this->m_iType = wxRP_CIRCLESHAPE;
     this->m_centreCoord = centreCoord;

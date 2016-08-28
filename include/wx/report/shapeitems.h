@@ -14,7 +14,7 @@ class WXDLLIMPEXP_RP wxReportShapeItem : public wxReportPageItem
 protected:
     double m_dLineThickness;
     wxColour m_lineColor;
-    int m_iLineStyle;
+    wxPenStyle m_iLineStyle;
     wxColour m_fillColor;
     
 public:
@@ -40,7 +40,7 @@ public:
      * \brief Sets the style of the shape's drawing line.
      * \param lineStyle line style
      */
-    void SetLineStyle(int lineStyle = wxSOLID);
+    void SetLineStyle(wxPenStyle lineStyle = wxPENSTYLE_SOLID);
     /**
      * \brief Sets the filling color for the shape. Does nothing for the line shapes.
      * \param fillColor color to fill
@@ -60,7 +60,7 @@ public:
      * \brief Returns the style of the shape's drawing line.
      * \return according value from the wxPenStyle enumeration
      */
-    const int& GetLineStyle();
+    const wxPenStyle GetLineStyle();
     /**
      * \brief Returns the filling color for the shape. Does nothing for the line shapes.
      * \return filling color, wxNullColour of no filling colour previously set
@@ -95,7 +95,7 @@ public:
      * \param lineStyle style of the shape's line (wxPenStyle enumeration values are used)
      */
     wxReportLineShape(double x1, double y1, double x2, double y2, double lineThickness = 0.5,
-                        const wxColour &lineColor = *wxBLACK, int lineStyle = wxSOLID);
+                        const wxColour &lineColor = *wxBLACK, const wxPenStyle lineStyle = wxPENSTYLE_SOLID);
     /**
      * \brief Constructor.
      * \param point1 starting point of the line
@@ -105,7 +105,7 @@ public:
      * \param lineStyle style of the shape's line (wxPenStyle enumeration values)
      */
     wxReportLineShape(const wxRealPoint& point1, const wxRealPoint& point2, double lineThickness = 0.5,
-                const wxColour &lineColor = *wxBLACK, int lineStyle = wxSOLID);
+                const wxColour &lineColor = *wxBLACK, const wxPenStyle lineStyle = wxPENSTYLE_SOLID);
                 
     /*!
      * \brief Default destructor.
@@ -184,7 +184,7 @@ public:
      * \param fillColor filling color for the shape
      */
     wxReportRectangleShape(double x, double y, double width, double height, double lineThickness = 0.5,
-                   const wxColour &lineColor = *wxBLACK, int lineStyle = wxSOLID,
+                   const wxColour &lineColor = *wxBLACK, const wxPenStyle lineStyle = wxPENSTYLE_SOLID,
                    const wxColour &fillColor = wxNullColour);
     /**
      * \brief Constructor.
@@ -197,7 +197,7 @@ public:
      * \param fillColor filling color for the shape
      */
     wxReportRectangleShape(const wxRealPoint& topLeftCorner, double width, double height, double lineThickness = 0.5,
-                   const wxColour &lineColor = *wxBLACK, int lineStyle = wxSOLID,
+                   const wxColour &lineColor = *wxBLACK, const wxPenStyle lineStyle = wxPENSTYLE_SOLID,
                    const wxColour &fillColor = wxNullColour);
     /**
      * \brief Default destructor
@@ -284,7 +284,7 @@ public:
      * \param fillColor filling color for the shape
      */
     wxReportCircleShape(double centreX, double centreY, double radius, double lineThickness = 0.5,
-                   const wxColour &lineColor = *wxBLACK, int lineStyle = wxSOLID,
+                   const wxColour &lineColor = *wxBLACK, const wxPenStyle lineStyle = wxPENSTYLE_SOLID,
                    const wxColour &fillColor = wxNullColour);
     /**
      * \brief Constructor.
@@ -296,7 +296,7 @@ public:
      * \param fillColor filling color for the shape
      */
     wxReportCircleShape(const wxRealPoint& centreCoord, double raius, double lineThickness = 0.5,
-                   const wxColour &lineColor = *wxBLACK, int lineStyle = wxSOLID,
+                   const wxColour &lineColor = *wxBLACK, const wxPenStyle lineStyle = wxPENSTYLE_SOLID,
                    const wxColour &fillColor = wxNullColour);
     /**
      * \brief Default destructor
