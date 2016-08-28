@@ -10,6 +10,10 @@ IMPLEMENT_APP(MainApp);
 
 bool MainApp::OnInit()
 {
+    // Add the common image handlers
+    wxImage::AddHandler( new wxPNGHandler );
+    wxImage::AddHandler( new wxJPEGHandler );
+
 	SetTopWindow( new MainFrame( NULL ) );
 	GetTopWindow()->Show();
 	
