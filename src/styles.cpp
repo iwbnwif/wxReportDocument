@@ -611,7 +611,7 @@ bool wxReportTextStyle::RetrieveFromXmlNode(const wxXmlNode* node)
     bool fFontUnderlined = fontUnderlined;
     if(fontPointSize > 0)
     {
-        wxFont font((int)fontPointSize, (int)fontFamily, (int)fontStyle, (int)fontWeight, fFontUnderlined, fontFaceName);
+        wxFont font((int)fontPointSize, (wxFontFamily)fontFamily, (wxFontStyle)fontStyle, (wxFontWeight)fontWeight, fFontUnderlined, fontFaceName);
         this->m_font = font;
     }
     
