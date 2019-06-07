@@ -1758,9 +1758,9 @@ bool wxReportTableItem::RetrieveFromXmlNode(const wxXmlNode* node)
     wxSscanf(node->GetAttribute(wxT("Y"), wxT("")), wxT("%lf"), &y);
     this->m_position = wxRealPoint(x, y);
     
-    bool isVariable = false;
+    int isVariable = 0;
     wxSscanf(node->GetAttribute(wxT("Variable"), wxT("")), wxT("%d"), &isVariable);
-    this->m_fVariable = isVariable;
+    this->m_fVariable = !!isVariable;
     
     if(!this->m_style.RetrieveFromXmlNode(node))
         return false;
